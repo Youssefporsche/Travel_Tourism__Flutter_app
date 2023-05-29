@@ -1,10 +1,12 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:tourism_dept_app/screens/details_screen.dart';
 import 'package:tourism_dept_app/screens/loading_screen.dart';
 import 'package:tourism_dept_app/screens/home.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:tourism_dept_app/screens/login_screen.dart';
 import 'package:tourism_dept_app/screens/new_post.dart';
+import 'package:tourism_dept_app/screens/profilePage_screen.dart';
 
 //import 'screens/login_screen.dart';
 //import 'screens/signup_screen.dart';
@@ -73,11 +75,17 @@ class _MyAppState extends State<MyApp> {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: NewPostScreen(),
-      //initialRoute: '/',
-      //routes: {
-      //'/': (context) => Home(),
-      //},
+      initialRoute: '/',
+      routes: {
+        '/': (dummyCtx) => Home(),
+        '/PostDetailsScreen': (dummyCtx) => PostDetailsScreen(
+              postId: 'zkJ0EsM1iYEBycuRjj32',
+            ),
+        '/profile': (dummyCtx) => ProfilePage(
+              email: '',
+              username: '',
+            ),
+      },
     );
   }
 }

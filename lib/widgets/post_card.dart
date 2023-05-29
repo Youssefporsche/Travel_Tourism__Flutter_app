@@ -2,7 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 
 class PostCard extends StatefulWidget {
-  const PostCard({Key? key}) : super(key: key);
+  const PostCard(
+      {Key? key,
+      required title,
+      required location,
+      required imageUrl,
+      required category})
+      : super(key: key);
 
   @override
   State<PostCard> createState() => _PostCardState();
@@ -15,11 +21,11 @@ void onRatingUpdate(double rating) {
 class _PostCardState extends State<PostCard> {
   @override
   Widget build(BuildContext context) {
-    return InkWell(
+    return GestureDetector(
       onTap: () {
-        // TODO: Navigate to details screen
+        Navigator.pushNamed(context, "/PostDetailsScreen");
       },
-      borderRadius: BorderRadius.circular(20),
+      // borderRadius: BorderRadius.circular(20),
       child: ClipRRect(
         borderRadius: BorderRadius.circular(20),
         child: Container(

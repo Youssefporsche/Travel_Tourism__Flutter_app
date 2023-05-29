@@ -23,23 +23,38 @@ class _BottomBarState extends State<BottomBar> {
       items: [
         BottomBarItem(
           icon: const Icon(Icons.home),
-          title: const Text('Home'),
+          title: const Text(
+            'Home',
+            style: TextStyle(fontSize: 12),
+          ),
           backgroundColor: Colors.blueAccent.shade200,
         ),
         // BottomNavigationBarItem(
         //     icon: Icon(Icons.favorite_rounded), label: 'Favorites'),
         BottomBarItem(
-            icon: const Icon(Icons.add_circle_outline_rounded),
-            title: const Text('New Post'),
-            backgroundColor: Colors.greenAccent.shade700,
-            
-            ),
+          icon: const Icon(Icons.add_circle_outline_rounded),
+          title: const Text(
+            'New Post',
+            style: TextStyle(fontSize: 12),
+          ),
+          backgroundColor: Colors.greenAccent.shade700,
+        ),
         BottomBarItem(
-            icon: const Icon(Icons.notifications),
-            title: const Text('Notifications'),
-            backgroundColor: Colors.yellow.shade700,
-            
-            ),
+          icon: const Icon(Icons.notifications),
+          title: const Text(
+            'Notifications',
+            style: TextStyle(fontSize: 10),
+          ),
+          backgroundColor: Colors.yellow.shade700,
+        ),
+        BottomBarItem(
+          icon: Icon(Icons.favorite),
+          title: Text(
+            'Favorites',
+            style: TextStyle(fontSize: 12),
+          ),
+          backgroundColor: Colors.red.shade700,
+        ),
         // BottomNavigationBarItem(
         //     icon: Icon(Icons.account_circle_rounded), label: 'Profile'),
       ],

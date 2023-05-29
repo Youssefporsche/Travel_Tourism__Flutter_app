@@ -138,6 +138,7 @@ class LoginScreen extends StatefulWidget {
 
 class _LoginScreenState extends State<LoginScreen> {
   @override
+  bool LoggedIn = false;
   var emailController = TextEditingController();
   var passwordController = TextEditingController();
   final authenticationInstance = FirebaseAuth.instance;
@@ -227,8 +228,8 @@ class _LoginScreenState extends State<LoginScreen> {
   Widget buildSignupBtn() {
     return GestureDetector(
         onTap: () {
-                Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => SignUpScreen()));
+          Navigator.push(
+              context, MaterialPageRoute(builder: (context) => SignUpScreen()));
         },
         child: RichText(
           text: const TextSpan(
@@ -263,6 +264,7 @@ class _LoginScreenState extends State<LoginScreen> {
           onPressed: () async {
             //   Navigator.push(context,  MaterialPageRoute(builder: (context) => const SignUpScreen()));
             // FirebaseFirestore.instance.collection('Post').add({'text': 'hi', 'userId': 'mghantous'}).then((value) => print("User Added")).catchError((error) => print("Failed to add user: $error"));
+
             authenticationInstance
                 .signInWithEmailAndPassword(
               email: emailController.text,
@@ -271,6 +273,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 .then((value) {
               Navigator.push(
                   context, MaterialPageRoute(builder: (context) => Home()));
+              LoggedIn = true;
             });
           },
           style: ElevatedButton.styleFrom(
