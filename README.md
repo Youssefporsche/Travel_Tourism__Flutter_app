@@ -1,18 +1,9 @@
-# tourism_dept_app
+# Tourism_app
 
-This is our project for the Software Mobile Development course.
+This is my project for the Software Mobile Development course.
 
 ## Notes
 
-### Naming conventions
-
-- **Class**: `PascalCase`
-- **Function**: `camelCase`
-- **Variable**: `camelCase`
-- **Constant**: `UPPERCASE_SNAKE_CASE`
-- **Private variable**: `_camelCase`
-- **Private function**: `_camelCase`
-- **File names**: `snake_case`
 
 ### Folder structure
 
